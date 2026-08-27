@@ -48,11 +48,10 @@ configurations** within a unified Total Cost of Settlement (TCS) function:
 
 ## Repository Structure
 
-The simulation is modularized into nine primary scripts plus one supporting
-data file, to ensure reproducibility:
+The simulation is modularized into nine primary scripts, located in 'scripts/'  plus one supporting
+data file in 'data/raw/', to ensure reproducibility:
 
-  - `01_network.R`: Constructs the scale-free Barabási–Albert topology (50
-    nodes: 5 hubs, 45 spokes) and validates the hub-to-spoke degree ratio
+  - `01_network.R`: Constructs the scale-free Barabási–Albert topology (50 nodes: 5 hubs, 45 spokes) and validates the hub-to-spoke degree ratio
     against the empirical benchmark (~23.5x, expected range [15, 35]).
   - `02_rtgs.R`: Implements the RTGS baseline, including FIFO queuing, a
     partial liquidity-recycling delay (0.421), and a 2% collateral haircut.
@@ -95,6 +94,13 @@ data file, to ensure reproducibility:
     directory.
 4.  Run the scripts in numerical order (`01` → `08`, with `07b_hybrid.R`
     after `07_wcbdc.R`) to replicate the findings presented in the thesis.
+1.  Ensure you have R version 4.0+ installed.
+2.  Install required packages: `install.packages(c("igraph", "ggplot2", "dplyr", "scales"))`.
+3.  Clone this repository — the `data/raw/Daily_avg_XRP_volatility_2_years.xlsx`
+    file is already included.
+4.  From the repository root, run the scripts in `scripts/` in numerical order
+    (`01` → `08`, with `07b_hybrid.R` after `07_wcbdc.R`) to replicate the
+    findings presented in the thesis.
 
 ## Citation
 

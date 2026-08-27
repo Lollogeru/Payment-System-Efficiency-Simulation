@@ -206,7 +206,7 @@ frontier <- data.frame(
   latency   = c(rt$D, dn$D, hy$D, wc$D, xr$D, xr$D),
   liquidity = c(rtgs_results$L, dns_results$L, hy$L, MD*P_xrp, MD*P_xrp, MD*sigma_xrp*P_xrp))
 
-png("figures/efficiency_frontier.png", width = 950, height = 680)
+png("output/figures/efficiency_frontier.png", width = 950, height = 680)
 cols <- c("red","blue","orange","purple","darkgreen","green3")
 
 # We use xlim and ylim adjustments to ensure the further-out labels don't get cut off
